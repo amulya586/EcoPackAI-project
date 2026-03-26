@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<title>EcoPackAI</title>
+
+<style>
+
+body{
+font-family: Arial;
+margin:0;
+background:#f5f5f5;
+}
+
+header{
+background:#2e7d32;
+color:white;
+padding:15px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+nav a{
+color:white;
+margin-left:20px;
+text-decoration:none;
+font-weight:bold;
+}
+
+.hero{
+display:flex;
+align-items:center;
+justify-content:space-around;
+padding:60px;
+background:white;
+}
+
+.hero-text{
+max-width:500px;
+}
+
+.hero-text h1{
+font-size:36px;
+color:#2e7d32;
+}
+
+.hero-images img{
+width:220px;
+margin:10px;
+border-radius:10px;
+}
+
+.features{
+padding:60px;
+text-align:center;
+}
+
+.features h2{
+color:#2e7d32;
+margin-bottom:40px;
+}
+
+.feature-grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:30px;
+}
+
+.feature{
+background:white;
+padding:25px;
+border-radius:10px;
+box-shadow:0 0 10px rgba(0,0,0,0.1);
+}
+
+.feature h3{
+color:#2e7d32;
+}
+
+footer{
+background:#222;
+color:white;
+text-align:center;
+padding:15px;
+margin-top:40px;
+}
+
+button{
+padding:12px 20px;
+background:#2e7d32;
+border:none;
+color:white;
+border-radius:5px;
+cursor:pointer;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<h2>EcoPackAI</h2>
+
+<nav>
+<a href="/login">Login</a>
+<a href="/register">Register</a>
+</nav>
+
+</header>
+
+
+<section class="hero">
+
+<div class="hero-text">
+
+<h1>AI Powered Sustainable Packaging</h1>
+
+<p>
+EcoPackAI helps businesses choose environmentally friendly packaging materials
+using Artificial Intelligence and sustainability data.
+</p>
+
+<a href="/register">
+<button>Get Started</button>
+</a>
+
+</div>
+
+
+<div class="hero-images">
+
+<img src="data:image/jpeg;base64,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">
+
+</div>
+
+</section>
+
+
+<section class="features">
+
+<h2>Key Features</h2>
+
+<div class="feature-grid">
+
+<div class="feature">
+<h3>AI Material Recommendation</h3>
+<p>
+Our machine learning models analyze product characteristics and recommend
+the most sustainable packaging material.
+</p>
+</div>
+
+<div class="feature">
+<h3>Carbon Footprint Prediction</h3>
+<p>
+Predict CO₂ emissions of different packaging materials to minimize
+environmental impact.
+</p>
+</div>
+
+<div class="feature">
+<h3>Cost Optimization</h3>
+<p>
+AI balances sustainability with cost to provide the most economical
+packaging solution.
+</p>
+</div>
+
+<div class="feature">
+<h3>Material Ranking System</h3>
+<p>
+Compare multiple materials and rank them based on sustainability,
+recyclability, and environmental impact.
+</p>
+</div>
+
+<div class="feature">
+<h3>Data Driven Decisions</h3>
+<p>
+Uses real datasets of packaging materials including strength,
+biodegradability and recyclability.
+</p>
+</div>
+
+<div class="feature">
+<h3>Eco-Friendly Insights</h3>
+<p>
+Provides businesses with insights to reduce packaging waste and
+support sustainable supply chains.
+</p>
+</div>
+
+</div>
+
+</section>
+
+
+<footer>
+
+<p>© 2026 EcoPackAI | Sustainable Packaging Intelligence</p>
+
+</footer>
+
+</body>
+</html>

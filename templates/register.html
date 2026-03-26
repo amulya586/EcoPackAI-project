@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<title>Register - EcoPackAI</title>
+
+<link rel="stylesheet"
+href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+
+<style>
+
+body{
+background:#f4f7f9;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+}
+
+.register-card{
+width:420px;
+padding:30px;
+background:white;
+border-radius:10px;
+box-shadow:0 5px 15px rgba(0,0,0,0.2);
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+<div class="register-card">
+
+<h3 class="text-center text-success mb-4">Create EcoPackAI Account</h3>
+
+<div class="mb-3">
+<label>Name</label>
+<input id="name" class="form-control" placeholder="Enter your name">
+</div>
+
+<div class="mb-3">
+<label>Email</label>
+<input id="email" class="form-control" placeholder="Enter email">
+</div>
+
+<div class="mb-3">
+<label>Password</label>
+<input id="password" type="password" class="form-control" placeholder="Create password">
+</div>
+
+<button onclick="register()" class="btn btn-success w-100">
+Register
+</button>
+
+<p class="text-center mt-3">
+
+Already have an account ?
+
+<a href="/login">Login</a>
+
+</p>
+
+<p class="text-center">
+<a href="/">Back to Home</a>
+</p>
+
+</div>
+
+
+<script>
+
+async function register(){
+
+let name=document.getElementById("name").value
+let email=document.getElementById("email").value
+let password=document.getElementById("password").value
+
+
+if(!name || !email || !password){
+
+alert("Please fill all fields")
+return
+
+}
+
+
+let res = await fetch("/register",{
+
+method:"POST",
+
+headers:{
+"Content-Type":"application/json"
+},
+
+body:JSON.stringify({
+name,
+email,
+password
+})
+
+})
+
+
+let data = await res.json()
+
+alert(data.message)
+
+window.location.href="/login"
+
+}
+
+</script>
+
+</body>
+
+</html>

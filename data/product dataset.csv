@@ -1,0 +1,801 @@
+product_id,product_category,fragility_level,product_weight_kg,shipping_distance_km,moisture_sensitive
+PROD0001,Clothing,Medium,1.19,1903.89,No
+PROD0002,Cosmetics,Medium,1.49,1217.38,Yes
+PROD0003,Electronics,High,0.95,354.19,Yes
+PROD0004,Food,Low,0.27,1739.04,Yes
+PROD0005,Electronics,Low,3.09,1430.74,Yes
+PROD0006,Cosmetics,Low,0.14,1941.32,No
+PROD0007,Cosmetics,Low,1.68,464.06,Yes
+PROD0008,Furniture,High,13.18,407.64,Yes
+PROD0009,Furniture,Medium,18.69,1073.28,Yes
+PROD0010,Books,High,2.27,617.9,No
+PROD0011,Clothing,Low,1.87,322.01,Yes
+PROD0012,Cosmetics,Low,0.66,764.41,No
+PROD0013,Food,High,1.42,1581.09,No
+PROD0014,Cosmetics,High,0.48,1052.76,No
+PROD0015,Home Decor,High,6.13,140.58,Yes
+PROD0016,Food,High,1.86,382.52,Yes
+PROD0017,Furniture,Medium,7.93,1900.33,Yes
+PROD0018,Books,Low,4.84,1626.37,No
+PROD0019,Electronics,High,1.66,240.46,Yes
+PROD0020,Clothing,High,2.08,908.3,No
+PROD0021,Furniture,Low,10.49,1015.59,Yes
+PROD0022,Books,High,0.37,1823.17,Yes
+PROD0023,Food,Low,0.85,1341.92,No
+PROD0024,Home Decor,High,3.46,1064.13,No
+PROD0025,Pharmaceuticals,Medium,0.84,410.47,No
+PROD0026,Home Decor,Low,9.71,1561.51,Yes
+PROD0027,Food,Medium,2.82,1794.91,Yes
+PROD0028,Food,Low,1.83,1847.65,No
+PROD0029,Pharmaceuticals,Low,0.18,432.17,Yes
+PROD0030,Books,High,0.42,684.39,Yes
+PROD0031,Clothing,High,1.23,579.13,Yes
+PROD0032,Clothing,High,2.5,745.67,Yes
+PROD0033,Pharmaceuticals,Low,0.46,1108.26,Yes
+PROD0034,Clothing,High,0.51,1614.28,No
+PROD0035,Books,Medium,0.56,1974.43,Yes
+PROD0036,Clothing,High,2.34,437.5,No
+PROD0037,Clothing,Low,0.12,1640.15,Yes
+PROD0038,Furniture,High,36.81,1471.56,No
+PROD0039,Clothing,High,2.34,194.39,Yes
+PROD0040,Cosmetics,Low,0.78,275.94,Yes
+PROD0041,Pharmaceuticals,Low,1.3,1265.43,No
+PROD0042,Electronics,Low,1.79,173.94,No
+PROD0043,Pharmaceuticals,High,0.5,684.11,Yes
+PROD0044,Food,Low,2.22,1293.24,No
+PROD0045,Furniture,Low,44.92,970.82,Yes
+PROD0046,Food,Medium,0.45,1440.83,No
+PROD0047,Home Decor,Low,7.73,1144.49,No
+PROD0048,Food,Medium,2.34,1012.9,No
+PROD0049,Books,Medium,2.71,883.7,No
+PROD0050,Books,High,0.32,260.39,Yes
+PROD0051,Pharmaceuticals,High,0.1,1291.0,Yes
+PROD0052,Cosmetics,Low,0.7,1041.71,Yes
+PROD0053,Furniture,Medium,45.84,536.12,Yes
+PROD0054,Clothing,Medium,1.29,1523.32,No
+PROD0055,Cosmetics,High,0.53,200.11,Yes
+PROD0056,Pharmaceuticals,High,0.47,364.38,No
+PROD0057,Books,High,4.66,1625.83,Yes
+PROD0058,Food,High,1.94,1749.35,Yes
+PROD0059,Home Decor,Medium,8.13,413.81,Yes
+PROD0060,Home Decor,Low,8.98,1101.72,Yes
+PROD0061,Home Decor,Low,8.17,1797.38,Yes
+PROD0062,Electronics,Medium,1.73,264.6,Yes
+PROD0063,Pharmaceuticals,Low,0.38,882.86,No
+PROD0064,Furniture,High,41.81,1728.42,No
+PROD0065,Furniture,Medium,5.31,1045.96,No
+PROD0066,Cosmetics,Medium,0.89,483.11,Yes
+PROD0067,Electronics,Medium,0.78,708.35,Yes
+PROD0068,Furniture,Low,47.43,680.25,No
+PROD0069,Food,High,1.6,1420.89,Yes
+PROD0070,Electronics,Low,1.95,1944.98,No
+PROD0071,Home Decor,Medium,9.64,540.98,Yes
+PROD0072,Food,Medium,1.54,636.71,No
+PROD0073,Clothing,Low,0.93,121.93,Yes
+PROD0074,Food,High,1.87,1030.22,No
+PROD0075,Home Decor,Medium,0.99,593.36,No
+PROD0076,Books,Low,4.56,517.15,Yes
+PROD0077,Books,Low,0.9,1004.43,Yes
+PROD0078,Electronics,Medium,4.93,522.01,Yes
+PROD0079,Cosmetics,High,1.38,1535.16,No
+PROD0080,Books,Medium,1.34,1470.02,Yes
+PROD0081,Books,Medium,1.97,1283.0,Yes
+PROD0082,Furniture,High,33.51,1094.76,Yes
+PROD0083,Pharmaceuticals,Medium,0.18,1678.84,Yes
+PROD0084,Books,Low,1.74,413.71,No
+PROD0085,Home Decor,Medium,0.89,1202.24,No
+PROD0086,Pharmaceuticals,Low,1.03,82.35,Yes
+PROD0087,Electronics,High,2.66,491.67,Yes
+PROD0088,Furniture,Medium,34.03,390.01,No
+PROD0089,Furniture,Medium,36.09,804.13,Yes
+PROD0090,Home Decor,Low,9.4,318.17,No
+PROD0091,Clothing,Low,1.09,271.27,No
+PROD0092,Pharmaceuticals,Medium,1.39,1760.81,No
+PROD0093,Food,Medium,0.85,1336.97,Yes
+PROD0094,Clothing,High,2.47,1132.64,Yes
+PROD0095,Clothing,High,1.64,521.61,No
+PROD0096,Clothing,Medium,0.37,1799.57,No
+PROD0097,Home Decor,High,9.05,1284.55,Yes
+PROD0098,Cosmetics,Low,0.74,730.96,No
+PROD0099,Cosmetics,Low,1.48,1799.37,Yes
+PROD0100,Home Decor,Medium,8.93,1570.76,Yes
+PROD0101,Food,High,1.96,214.07,No
+PROD0102,Furniture,High,12.27,1802.18,No
+PROD0103,Home Decor,Medium,6.26,67.93,No
+PROD0104,Books,Medium,0.69,1343.83,No
+PROD0105,Food,High,0.11,363.58,No
+PROD0106,Home Decor,High,5.71,1399.2,Yes
+PROD0107,Cosmetics,Low,1.34,487.33,Yes
+PROD0108,Home Decor,Low,7.27,512.64,Yes
+PROD0109,Electronics,High,1.76,1505.66,Yes
+PROD0110,Food,Medium,1.98,1705.99,Yes
+PROD0111,Home Decor,High,6.75,1158.2,Yes
+PROD0112,Pharmaceuticals,Medium,0.19,767.05,No
+PROD0113,Furniture,Medium,16.93,525.78,No
+PROD0114,Cosmetics,High,1.95,816.54,Yes
+PROD0115,Electronics,Low,4.48,1280.72,Yes
+PROD0116,Clothing,Low,2.4,1030.14,Yes
+PROD0117,Clothing,Medium,1.77,1010.41,Yes
+PROD0118,Food,Medium,0.67,1458.78,No
+PROD0119,Food,Medium,0.91,97.42,Yes
+PROD0120,Electronics,Medium,3.3,395.37,Yes
+PROD0121,Cosmetics,Low,1.89,1910.16,No
+PROD0122,Cosmetics,Low,1.84,771.81,No
+PROD0123,Food,Medium,0.14,1860.22,Yes
+PROD0124,Cosmetics,High,0.91,1934.98,Yes
+PROD0125,Cosmetics,Medium,1.93,1713.37,No
+PROD0126,Clothing,High,0.95,800.94,No
+PROD0127,Food,Low,2.57,668.0,Yes
+PROD0128,Food,Low,0.59,1135.76,No
+PROD0129,Food,High,2.81,1407.26,No
+PROD0130,Electronics,Low,2.94,239.49,No
+PROD0131,Home Decor,Medium,6.34,1980.61,Yes
+PROD0132,Cosmetics,High,0.37,1060.74,Yes
+PROD0133,Electronics,Medium,4.41,1494.5,No
+PROD0134,Books,Low,3.55,1419.84,No
+PROD0135,Home Decor,Medium,3.92,622.5,Yes
+PROD0136,Books,High,4.08,1629.72,No
+PROD0137,Food,High,2.61,1830.82,Yes
+PROD0138,Pharmaceuticals,High,0.79,1027.96,No
+PROD0139,Pharmaceuticals,High,1.21,1317.43,Yes
+PROD0140,Clothing,High,2.14,1601.8,Yes
+PROD0141,Food,High,2.68,709.09,Yes
+PROD0142,Furniture,Low,21.9,233.26,Yes
+PROD0143,Food,Low,1.78,120.09,No
+PROD0144,Food,High,1.45,1108.16,No
+PROD0145,Home Decor,Low,3.22,1202.12,Yes
+PROD0146,Books,Low,0.35,122.83,No
+PROD0147,Furniture,Low,42.02,752.37,No
+PROD0148,Pharmaceuticals,High,0.23,1068.37,Yes
+PROD0149,Pharmaceuticals,Medium,1.17,470.85,Yes
+PROD0150,Clothing,Low,1.91,216.43,Yes
+PROD0151,Home Decor,High,0.99,1086.14,Yes
+PROD0152,Food,Medium,1.67,1292.99,Yes
+PROD0153,Pharmaceuticals,Medium,1.1,1952.91,Yes
+PROD0154,Electronics,Medium,2.68,679.77,No
+PROD0155,Cosmetics,Medium,1.61,578.12,No
+PROD0156,Pharmaceuticals,Low,0.69,202.99,Yes
+PROD0157,Furniture,Medium,6.14,1927.16,No
+PROD0158,Electronics,High,4.21,1407.15,No
+PROD0159,Electronics,Low,2.16,387.92,Yes
+PROD0160,Cosmetics,Low,0.4,537.97,Yes
+PROD0161,Furniture,Low,29.72,1443.46,No
+PROD0162,Clothing,High,2.01,595.87,No
+PROD0163,Food,High,2.87,1488.9,Yes
+PROD0164,Home Decor,Low,5.77,1242.86,Yes
+PROD0165,Books,Medium,2.21,533.08,Yes
+PROD0166,Clothing,High,1.13,1527.8,Yes
+PROD0167,Furniture,High,5.65,276.34,Yes
+PROD0168,Furniture,Medium,7.07,129.42,No
+PROD0169,Pharmaceuticals,High,1.29,1422.13,No
+PROD0170,Pharmaceuticals,Medium,0.74,240.78,Yes
+PROD0171,Cosmetics,High,1.03,973.27,No
+PROD0172,Furniture,Medium,12.79,896.01,Yes
+PROD0173,Electronics,Medium,2.11,1250.91,Yes
+PROD0174,Home Decor,Medium,6.53,138.34,Yes
+PROD0175,Clothing,Low,1.19,1270.43,Yes
+PROD0176,Pharmaceuticals,Low,0.78,1720.16,Yes
+PROD0177,Home Decor,Low,6.76,367.72,No
+PROD0178,Electronics,Medium,0.54,1302.72,No
+PROD0179,Books,Low,0.33,1192.26,Yes
+PROD0180,Food,Low,2.83,1172.17,No
+PROD0181,Clothing,High,1.23,1304.41,Yes
+PROD0182,Furniture,High,25.62,1113.95,Yes
+PROD0183,Clothing,High,2.83,802.9,Yes
+PROD0184,Electronics,High,4.81,1815.43,No
+PROD0185,Home Decor,Low,2.36,185.25,Yes
+PROD0186,Cosmetics,High,0.29,85.53,No
+PROD0187,Electronics,Medium,0.65,1381.86,Yes
+PROD0188,Home Decor,High,1.18,672.0,Yes
+PROD0189,Cosmetics,High,1.71,95.38,Yes
+PROD0190,Food,Low,2.46,599.62,No
+PROD0191,Food,High,0.44,1408.64,Yes
+PROD0192,Home Decor,High,6.47,1761.07,Yes
+PROD0193,Cosmetics,Low,1.5,1616.79,Yes
+PROD0194,Electronics,High,1.55,396.01,Yes
+PROD0195,Electronics,High,3.8,1623.33,No
+PROD0196,Pharmaceuticals,Low,1.49,854.6,Yes
+PROD0197,Electronics,Medium,1.99,1564.01,Yes
+PROD0198,Furniture,High,20.34,1864.98,No
+PROD0199,Books,Low,4.32,886.54,Yes
+PROD0200,Books,Low,3.8,1521.36,Yes
+PROD0201,Food,Low,0.4,1809.98,Yes
+PROD0202,Home Decor,Medium,5.3,1661.59,No
+PROD0203,Cosmetics,Low,0.71,1796.27,No
+PROD0204,Clothing,High,1.23,71.13,Yes
+PROD0205,Clothing,Medium,2.73,228.01,Yes
+PROD0206,Furniture,High,19.37,1902.62,No
+PROD0207,Home Decor,High,9.53,1168.2,Yes
+PROD0208,Electronics,Low,3.23,924.47,No
+PROD0209,Home Decor,Low,3.29,690.9,Yes
+PROD0210,Furniture,Medium,35.26,1517.13,Yes
+PROD0211,Food,High,2.4,1589.76,Yes
+PROD0212,Food,Medium,0.36,1014.12,No
+PROD0213,Pharmaceuticals,Medium,0.13,1121.58,Yes
+PROD0214,Electronics,High,2.32,1781.02,No
+PROD0215,Home Decor,Medium,3.83,278.28,Yes
+PROD0216,Food,High,0.51,1534.95,Yes
+PROD0217,Home Decor,Medium,6.37,247.19,Yes
+PROD0218,Electronics,Medium,0.6,1416.89,Yes
+PROD0219,Home Decor,High,1.19,1652.63,Yes
+PROD0220,Electronics,Low,3.59,208.63,Yes
+PROD0221,Food,Low,0.35,1973.95,No
+PROD0222,Electronics,Low,2.0,772.75,No
+PROD0223,Clothing,Low,2.46,1897.13,Yes
+PROD0224,Food,High,2.96,1519.09,No
+PROD0225,Clothing,Low,1.19,212.83,Yes
+PROD0226,Cosmetics,Low,1.58,1138.89,No
+PROD0227,Cosmetics,High,0.91,1817.39,No
+PROD0228,Electronics,Medium,0.73,1010.62,No
+PROD0229,Food,High,0.13,963.89,Yes
+PROD0230,Pharmaceuticals,Low,0.13,281.69,No
+PROD0231,Home Decor,Medium,1.62,1315.96,No
+PROD0232,Furniture,High,38.57,1187.57,No
+PROD0233,Food,Medium,2.89,781.0,No
+PROD0234,Cosmetics,High,0.64,1743.77,Yes
+PROD0235,Electronics,Low,1.27,1928.28,Yes
+PROD0236,Furniture,Low,5.55,1941.26,No
+PROD0237,Clothing,Medium,0.23,1787.73,No
+PROD0238,Food,Medium,1.63,1986.28,No
+PROD0239,Books,High,0.55,1130.02,No
+PROD0240,Books,Medium,4.85,1070.04,Yes
+PROD0241,Clothing,Low,1.93,1406.71,Yes
+PROD0242,Cosmetics,High,0.96,1273.74,No
+PROD0243,Books,High,3.0,1807.26,No
+PROD0244,Clothing,High,0.23,597.88,No
+PROD0245,Food,Medium,2.86,1786.01,No
+PROD0246,Electronics,Low,2.39,1259.26,Yes
+PROD0247,Furniture,Medium,17.48,416.84,Yes
+PROD0248,Cosmetics,Low,0.98,739.04,No
+PROD0249,Food,Low,1.79,201.58,Yes
+PROD0250,Home Decor,Low,9.76,1973.11,Yes
+PROD0251,Electronics,High,3.55,1095.39,No
+PROD0252,Furniture,High,18.93,1636.9,No
+PROD0253,Electronics,Medium,3.49,367.1,Yes
+PROD0254,Pharmaceuticals,Medium,1.37,1653.95,Yes
+PROD0255,Home Decor,Medium,9.52,1465.15,No
+PROD0256,Food,Low,1.88,865.57,No
+PROD0257,Clothing,Medium,2.8,1738.82,Yes
+PROD0258,Furniture,High,7.03,101.42,Yes
+PROD0259,Clothing,Low,1.19,1630.58,No
+PROD0260,Electronics,High,4.94,343.31,Yes
+PROD0261,Furniture,Low,31.74,792.74,No
+PROD0262,Clothing,High,2.91,1692.13,Yes
+PROD0263,Clothing,Medium,2.53,963.95,No
+PROD0264,Cosmetics,Medium,0.89,583.14,No
+PROD0265,Food,Medium,0.26,1736.21,No
+PROD0266,Pharmaceuticals,High,1.23,1999.45,Yes
+PROD0267,Clothing,Low,2.99,1133.09,No
+PROD0268,Home Decor,Low,7.81,1892.29,No
+PROD0269,Clothing,High,2.56,532.33,No
+PROD0270,Cosmetics,Medium,0.96,301.86,No
+PROD0271,Food,High,2.87,1232.04,No
+PROD0272,Furniture,High,15.29,1359.82,Yes
+PROD0273,Pharmaceuticals,High,0.95,748.42,Yes
+PROD0274,Home Decor,Low,1.58,1359.57,Yes
+PROD0275,Pharmaceuticals,Medium,0.8,1556.02,No
+PROD0276,Pharmaceuticals,Medium,0.8,1711.75,Yes
+PROD0277,Books,Medium,2.85,1143.83,Yes
+PROD0278,Books,High,4.41,836.79,Yes
+PROD0279,Home Decor,High,1.77,106.13,Yes
+PROD0280,Home Decor,Medium,7.67,1259.6,No
+PROD0281,Cosmetics,Low,1.44,465.28,Yes
+PROD0282,Electronics,High,0.85,78.36,No
+PROD0283,Food,High,1.12,1200.34,Yes
+PROD0284,Pharmaceuticals,High,0.62,903.08,Yes
+PROD0285,Electronics,Medium,4.54,729.1,No
+PROD0286,Clothing,Low,1.59,1578.12,No
+PROD0287,Food,Medium,1.25,1263.07,No
+PROD0288,Food,Medium,2.6,1901.57,No
+PROD0289,Cosmetics,Low,0.38,1856.85,Yes
+PROD0290,Books,Medium,2.56,553.58,Yes
+PROD0291,Furniture,Medium,25.66,1961.06,Yes
+PROD0292,Clothing,Low,1.53,691.07,Yes
+PROD0293,Food,High,1.94,518.28,Yes
+PROD0294,Home Decor,Low,1.22,301.32,Yes
+PROD0295,Electronics,Medium,0.81,346.21,No
+PROD0296,Food,Medium,0.5,1299.71,Yes
+PROD0297,Electronics,High,1.07,724.05,No
+PROD0298,Clothing,Medium,2.7,974.23,No
+PROD0299,Pharmaceuticals,Low,1.02,386.02,No
+PROD0300,Furniture,Low,13.65,129.69,Yes
+PROD0301,Electronics,Low,1.01,593.25,Yes
+PROD0302,Furniture,Low,12.97,222.97,No
+PROD0303,Electronics,Low,0.78,948.52,Yes
+PROD0304,Cosmetics,Low,0.49,760.33,Yes
+PROD0305,Cosmetics,Medium,1.06,1396.27,No
+PROD0306,Electronics,High,0.39,1608.85,No
+PROD0307,Clothing,Medium,1.92,209.43,Yes
+PROD0308,Food,Low,2.63,1845.7,No
+PROD0309,Home Decor,High,1.08,589.91,Yes
+PROD0310,Electronics,Low,4.07,1509.11,No
+PROD0311,Books,Low,1.09,458.23,No
+PROD0312,Home Decor,Medium,4.02,994.82,No
+PROD0313,Home Decor,High,6.37,769.38,Yes
+PROD0314,Pharmaceuticals,High,0.72,1507.57,Yes
+PROD0315,Cosmetics,Medium,0.17,542.25,Yes
+PROD0316,Cosmetics,High,1.46,1795.65,Yes
+PROD0317,Electronics,Medium,2.66,1087.62,No
+PROD0318,Clothing,Low,0.41,922.45,Yes
+PROD0319,Pharmaceuticals,Medium,0.82,522.82,Yes
+PROD0320,Food,Medium,0.88,785.7,No
+PROD0321,Furniture,High,5.9,678.05,No
+PROD0322,Pharmaceuticals,High,0.36,688.62,No
+PROD0323,Books,Medium,0.77,1786.53,Yes
+PROD0324,Books,Medium,3.05,1374.25,No
+PROD0325,Home Decor,Low,8.0,1021.96,No
+PROD0326,Books,Medium,0.62,1097.36,No
+PROD0327,Home Decor,Low,6.07,1503.61,Yes
+PROD0328,Books,Medium,2.27,298.78,No
+PROD0329,Books,Low,1.56,758.01,Yes
+PROD0330,Home Decor,Medium,6.64,1163.02,No
+PROD0331,Books,High,1.91,1973.7,No
+PROD0332,Cosmetics,Low,1.25,512.59,No
+PROD0333,Food,Low,0.4,348.08,Yes
+PROD0334,Pharmaceuticals,Low,0.41,363.33,Yes
+PROD0335,Furniture,Medium,13.4,605.94,No
+PROD0336,Electronics,Low,1.03,1798.69,Yes
+PROD0337,Books,Low,0.59,1072.8,Yes
+PROD0338,Cosmetics,Medium,0.88,1965.64,Yes
+PROD0339,Pharmaceuticals,High,0.21,825.82,No
+PROD0340,Home Decor,Low,9.71,1737.74,Yes
+PROD0341,Pharmaceuticals,Low,1.23,552.91,No
+PROD0342,Pharmaceuticals,Low,0.3,1353.85,No
+PROD0343,Pharmaceuticals,Medium,1.4,1135.69,Yes
+PROD0344,Cosmetics,High,1.19,595.96,No
+PROD0345,Cosmetics,Low,1.56,414.74,No
+PROD0346,Furniture,Medium,19.57,879.6,Yes
+PROD0347,Food,Low,1.57,522.7,Yes
+PROD0348,Pharmaceuticals,Low,0.22,1240.71,Yes
+PROD0349,Books,High,1.59,1183.41,No
+PROD0350,Books,Medium,0.94,988.22,Yes
+PROD0351,Books,Medium,2.76,151.06,No
+PROD0352,Clothing,Low,1.08,312.11,No
+PROD0353,Books,Medium,0.5,1980.42,Yes
+PROD0354,Pharmaceuticals,High,0.52,1629.26,Yes
+PROD0355,Home Decor,High,2.92,1378.93,No
+PROD0356,Home Decor,Low,7.72,1211.5,No
+PROD0357,Clothing,Medium,1.47,853.09,No
+PROD0358,Pharmaceuticals,Low,0.56,1862.58,No
+PROD0359,Electronics,High,4.19,1931.8,No
+PROD0360,Home Decor,Medium,1.68,1475.19,Yes
+PROD0361,Cosmetics,Medium,1.88,403.4,Yes
+PROD0362,Cosmetics,Medium,0.23,1495.19,Yes
+PROD0363,Books,Low,2.96,1691.57,No
+PROD0364,Home Decor,Medium,1.83,1600.77,No
+PROD0365,Clothing,Medium,0.68,369.13,No
+PROD0366,Pharmaceuticals,Medium,0.29,1638.42,Yes
+PROD0367,Pharmaceuticals,Medium,1.01,1069.98,No
+PROD0368,Furniture,High,21.15,1760.54,Yes
+PROD0369,Books,Low,2.08,1642.37,No
+PROD0370,Electronics,Low,2.31,785.04,Yes
+PROD0371,Electronics,Low,2.42,637.69,Yes
+PROD0372,Furniture,High,38.64,1030.3,Yes
+PROD0373,Furniture,Medium,15.45,1804.17,No
+PROD0374,Furniture,Medium,22.28,1109.93,Yes
+PROD0375,Electronics,High,4.55,1267.26,No
+PROD0376,Electronics,Medium,0.76,1882.67,No
+PROD0377,Books,High,3.21,703.07,No
+PROD0378,Home Decor,Low,1.82,1598.35,No
+PROD0379,Home Decor,Low,6.39,1090.25,Yes
+PROD0380,Pharmaceuticals,High,1.35,1587.76,Yes
+PROD0381,Cosmetics,High,0.39,657.86,Yes
+PROD0382,Clothing,High,0.82,1500.7,Yes
+PROD0383,Cosmetics,Low,0.16,1161.28,Yes
+PROD0384,Books,Low,3.86,1759.69,No
+PROD0385,Electronics,Low,1.84,1651.45,Yes
+PROD0386,Pharmaceuticals,Medium,0.21,1700.58,Yes
+PROD0387,Electronics,High,0.81,824.71,Yes
+PROD0388,Electronics,Medium,4.03,342.34,Yes
+PROD0389,Furniture,Medium,15.32,1458.39,No
+PROD0390,Cosmetics,High,1.47,1300.24,No
+PROD0391,Cosmetics,Low,1.42,1108.31,Yes
+PROD0392,Books,Medium,1.41,724.11,No
+PROD0393,Clothing,High,0.63,1821.48,Yes
+PROD0394,Food,High,1.79,831.66,No
+PROD0395,Clothing,Medium,1.44,1897.2,Yes
+PROD0396,Food,High,0.54,1193.15,No
+PROD0397,Home Decor,Low,5.31,1242.34,No
+PROD0398,Clothing,High,0.15,1750.64,No
+PROD0399,Furniture,Low,46.95,1152.01,Yes
+PROD0400,Furniture,Medium,36.35,1848.87,Yes
+PROD0401,Clothing,Medium,2.15,347.45,Yes
+PROD0402,Clothing,Medium,1.77,1233.09,Yes
+PROD0403,Furniture,Medium,24.09,1486.07,No
+PROD0404,Furniture,Low,47.05,1854.86,No
+PROD0405,Books,Low,2.36,270.81,Yes
+PROD0406,Cosmetics,High,1.97,1685.85,Yes
+PROD0407,Food,Low,0.46,1845.64,Yes
+PROD0408,Home Decor,High,8.76,1061.73,Yes
+PROD0409,Food,Medium,1.81,828.06,Yes
+PROD0410,Cosmetics,Medium,0.2,703.63,No
+PROD0411,Home Decor,Medium,8.13,59.03,Yes
+PROD0412,Furniture,High,20.01,826.43,No
+PROD0413,Cosmetics,Low,1.12,1843.72,No
+PROD0414,Home Decor,Low,3.79,726.56,Yes
+PROD0415,Home Decor,Medium,7.51,931.82,No
+PROD0416,Food,Medium,0.75,932.26,No
+PROD0417,Electronics,Low,0.88,393.95,Yes
+PROD0418,Cosmetics,Medium,1.05,866.9,No
+PROD0419,Books,Medium,4.59,756.67,No
+PROD0420,Electronics,High,2.99,1282.92,Yes
+PROD0421,Furniture,Medium,5.59,1343.9,No
+PROD0422,Furniture,High,13.01,1924.09,No
+PROD0423,Furniture,Low,11.69,858.52,No
+PROD0424,Electronics,Low,0.61,1993.9,No
+PROD0425,Cosmetics,Medium,1.05,1211.0,No
+PROD0426,Home Decor,Medium,1.14,1512.42,No
+PROD0427,Electronics,High,1.21,1801.21,No
+PROD0428,Cosmetics,Medium,0.49,421.84,No
+PROD0429,Electronics,Low,0.38,970.53,Yes
+PROD0430,Home Decor,Medium,5.87,178.13,No
+PROD0431,Food,High,2.35,933.91,No
+PROD0432,Pharmaceuticals,Medium,0.81,909.49,Yes
+PROD0433,Clothing,Medium,1.26,1141.3,No
+PROD0434,Food,Low,0.55,404.76,Yes
+PROD0435,Food,High,2.6,1894.93,Yes
+PROD0436,Clothing,High,1.18,577.95,No
+PROD0437,Electronics,High,3.29,847.03,Yes
+PROD0438,Cosmetics,Low,0.15,354.5,No
+PROD0439,Electronics,Medium,3.64,1334.9,No
+PROD0440,Electronics,High,0.33,482.85,Yes
+PROD0441,Furniture,Low,15.4,1360.19,No
+PROD0442,Clothing,Medium,0.16,253.01,No
+PROD0443,Cosmetics,Medium,1.62,398.16,No
+PROD0444,Food,Medium,1.99,514.46,Yes
+PROD0445,Food,Medium,0.39,524.19,Yes
+PROD0446,Furniture,Low,37.5,1718.61,No
+PROD0447,Books,High,4.19,824.51,No
+PROD0448,Clothing,High,2.04,449.72,No
+PROD0449,Electronics,Medium,1.61,1797.85,No
+PROD0450,Cosmetics,Low,0.12,216.74,No
+PROD0451,Pharmaceuticals,High,0.35,101.74,Yes
+PROD0452,Home Decor,Medium,2.22,1186.93,Yes
+PROD0453,Books,Low,2.22,1790.71,No
+PROD0454,Pharmaceuticals,Low,1.24,716.54,No
+PROD0455,Pharmaceuticals,Medium,0.43,790.4,No
+PROD0456,Books,Low,3.03,572.72,No
+PROD0457,Electronics,Medium,3.2,848.35,No
+PROD0458,Clothing,Low,1.7,900.45,Yes
+PROD0459,Clothing,High,0.95,1899.48,No
+PROD0460,Home Decor,Low,7.75,323.22,No
+PROD0461,Home Decor,Low,8.75,1000.49,No
+PROD0462,Clothing,Medium,2.69,1609.72,Yes
+PROD0463,Electronics,High,2.24,93.82,No
+PROD0464,Books,High,1.49,1106.19,No
+PROD0465,Furniture,Low,33.51,552.88,No
+PROD0466,Food,Medium,0.5,1678.11,No
+PROD0467,Pharmaceuticals,High,1.48,1075.1,Yes
+PROD0468,Furniture,Medium,12.73,581.0,Yes
+PROD0469,Home Decor,High,0.67,1832.88,Yes
+PROD0470,Books,High,0.77,1174.21,No
+PROD0471,Books,Low,1.52,1130.65,Yes
+PROD0472,Home Decor,High,6.69,1668.0,No
+PROD0473,Clothing,High,0.7,71.44,No
+PROD0474,Cosmetics,High,0.36,1805.04,Yes
+PROD0475,Electronics,Low,4.39,1214.96,No
+PROD0476,Electronics,High,3.08,1346.82,No
+PROD0477,Clothing,Medium,0.61,1833.1,Yes
+PROD0478,Books,Low,2.21,797.12,No
+PROD0479,Furniture,Low,28.35,141.58,Yes
+PROD0480,Furniture,Low,12.48,1489.17,No
+PROD0481,Cosmetics,Medium,0.26,1226.15,No
+PROD0482,Clothing,High,0.81,809.13,Yes
+PROD0483,Pharmaceuticals,Medium,0.47,743.56,Yes
+PROD0484,Clothing,Low,2.19,629.39,No
+PROD0485,Food,Medium,1.74,978.3,No
+PROD0486,Furniture,Low,34.87,1876.82,No
+PROD0487,Books,High,3.72,469.13,Yes
+PROD0488,Food,Medium,0.19,561.41,No
+PROD0489,Food,Medium,1.83,150.28,Yes
+PROD0490,Furniture,Low,27.34,1213.84,No
+PROD0491,Cosmetics,High,0.74,1553.28,Yes
+PROD0492,Electronics,Low,0.71,196.52,No
+PROD0493,Food,High,2.21,1016.21,No
+PROD0494,Furniture,High,35.98,897.91,No
+PROD0495,Home Decor,Medium,2.84,1647.25,Yes
+PROD0496,Food,High,2.42,1404.66,No
+PROD0497,Books,Medium,1.51,1200.95,No
+PROD0498,Food,High,1.15,228.59,Yes
+PROD0499,Cosmetics,Low,1.84,316.8,No
+PROD0500,Clothing,High,2.86,919.71,No
+PROD0501,Electronics,High,1.09,1106.71,No
+PROD0502,Pharmaceuticals,Medium,1.32,1477.84,Yes
+PROD0503,Food,Medium,2.44,1334.63,No
+PROD0504,Pharmaceuticals,Low,1.05,1705.93,No
+PROD0505,Electronics,High,1.4,1004.38,No
+PROD0506,Books,Medium,1.26,1975.95,Yes
+PROD0507,Pharmaceuticals,Low,1.42,126.88,Yes
+PROD0508,Clothing,High,2.15,1854.23,Yes
+PROD0509,Cosmetics,Low,0.44,1157.49,Yes
+PROD0510,Furniture,Medium,46.2,116.19,Yes
+PROD0511,Books,Low,3.55,629.83,Yes
+PROD0512,Pharmaceuticals,High,1.39,1943.56,No
+PROD0513,Books,Low,4.73,974.72,No
+PROD0514,Books,High,4.34,1696.87,No
+PROD0515,Books,Medium,1.73,1666.39,No
+PROD0516,Clothing,Medium,0.21,1212.73,No
+PROD0517,Pharmaceuticals,High,0.38,285.11,Yes
+PROD0518,Electronics,High,0.57,1407.76,No
+PROD0519,Electronics,Medium,1.83,1463.3,Yes
+PROD0520,Food,Medium,0.29,664.82,No
+PROD0521,Clothing,Medium,1.66,1591.91,No
+PROD0522,Electronics,High,1.73,1270.49,Yes
+PROD0523,Pharmaceuticals,Low,1.33,1250.93,No
+PROD0524,Clothing,Low,0.78,97.58,No
+PROD0525,Furniture,Low,44.15,91.48,Yes
+PROD0526,Food,High,2.64,1081.43,Yes
+PROD0527,Food,Medium,2.82,1607.63,No
+PROD0528,Cosmetics,High,2.0,733.89,Yes
+PROD0529,Electronics,Medium,3.88,833.77,Yes
+PROD0530,Clothing,Low,1.49,1273.64,Yes
+PROD0531,Furniture,Low,44.32,1968.96,No
+PROD0532,Books,Low,3.89,864.65,No
+PROD0533,Food,Low,1.32,1488.29,Yes
+PROD0534,Pharmaceuticals,Medium,0.4,265.42,Yes
+PROD0535,Clothing,Low,1.13,610.12,Yes
+PROD0536,Cosmetics,High,0.66,505.54,No
+PROD0537,Electronics,Medium,0.4,84.85,No
+PROD0538,Food,High,2.96,884.16,No
+PROD0539,Books,Medium,2.04,1375.31,No
+PROD0540,Electronics,High,1.25,1902.42,Yes
+PROD0541,Home Decor,Medium,7.97,224.35,Yes
+PROD0542,Books,Low,2.2,1764.28,No
+PROD0543,Food,High,2.84,961.43,Yes
+PROD0544,Food,Low,1.88,375.72,Yes
+PROD0545,Food,High,2.97,501.76,No
+PROD0546,Home Decor,High,9.46,1316.81,Yes
+PROD0547,Food,High,1.86,1049.74,No
+PROD0548,Books,Low,1.31,394.23,Yes
+PROD0549,Home Decor,Medium,2.59,413.55,No
+PROD0550,Clothing,Low,2.36,732.74,No
+PROD0551,Electronics,Medium,0.48,1939.75,Yes
+PROD0552,Food,High,2.66,1859.12,Yes
+PROD0553,Home Decor,High,9.95,389.1,Yes
+PROD0554,Books,High,2.1,1528.57,Yes
+PROD0555,Electronics,Medium,3.54,350.1,No
+PROD0556,Clothing,High,2.47,487.66,No
+PROD0557,Food,High,0.75,1097.1,Yes
+PROD0558,Furniture,Medium,31.68,1181.17,Yes
+PROD0559,Food,High,0.37,1761.05,No
+PROD0560,Electronics,Medium,1.47,302.55,No
+PROD0561,Cosmetics,Low,1.79,1913.52,Yes
+PROD0562,Clothing,Medium,2.6,1628.56,No
+PROD0563,Electronics,Medium,3.35,1124.17,Yes
+PROD0564,Home Decor,Medium,1.33,846.48,No
+PROD0565,Clothing,Low,1.18,556.52,Yes
+PROD0566,Clothing,High,2.2,1016.96,No
+PROD0567,Home Decor,High,1.27,479.36,Yes
+PROD0568,Electronics,Low,3.48,198.46,No
+PROD0569,Clothing,High,2.57,1015.54,Yes
+PROD0570,Books,Medium,2.51,1205.2,Yes
+PROD0571,Electronics,High,4.16,728.23,Yes
+PROD0572,Home Decor,Medium,6.94,1153.18,Yes
+PROD0573,Cosmetics,Low,0.61,1763.33,No
+PROD0574,Pharmaceuticals,Medium,1.21,1333.98,Yes
+PROD0575,Electronics,Medium,4.28,1741.22,No
+PROD0576,Pharmaceuticals,High,1.08,1682.18,No
+PROD0577,Food,Low,2.12,1376.27,Yes
+PROD0578,Furniture,High,32.84,1517.8,No
+PROD0579,Pharmaceuticals,High,0.28,1767.7,No
+PROD0580,Electronics,Low,4.38,107.03,Yes
+PROD0581,Pharmaceuticals,High,1.25,301.3,No
+PROD0582,Electronics,High,1.81,1499.84,No
+PROD0583,Cosmetics,Medium,0.41,1645.04,No
+PROD0584,Food,Low,2.51,1039.56,Yes
+PROD0585,Pharmaceuticals,Low,0.06,609.72,Yes
+PROD0586,Pharmaceuticals,Medium,0.94,1963.31,Yes
+PROD0587,Electronics,High,3.23,556.62,Yes
+PROD0588,Cosmetics,High,1.3,1102.97,Yes
+PROD0589,Furniture,High,40.09,258.61,Yes
+PROD0590,Pharmaceuticals,Low,1.15,1105.47,No
+PROD0591,Electronics,Low,4.82,716.65,Yes
+PROD0592,Clothing,Medium,1.93,1867.45,No
+PROD0593,Pharmaceuticals,High,0.2,1877.6,Yes
+PROD0594,Food,Medium,2.09,182.28,Yes
+PROD0595,Clothing,High,0.97,1430.94,Yes
+PROD0596,Furniture,Medium,8.03,1185.23,No
+PROD0597,Pharmaceuticals,High,0.55,1260.79,No
+PROD0598,Clothing,Medium,0.23,1749.5,No
+PROD0599,Clothing,Low,2.92,1939.31,No
+PROD0600,Books,Medium,3.8,303.67,Yes
+PROD0601,Furniture,Low,39.12,97.94,No
+PROD0602,Books,Low,0.31,681.04,No
+PROD0603,Books,Low,2.55,1552.29,No
+PROD0604,Home Decor,High,6.99,919.51,Yes
+PROD0605,Books,Medium,1.51,1994.39,No
+PROD0606,Cosmetics,Low,0.91,930.2,No
+PROD0607,Electronics,High,0.99,1599.88,No
+PROD0608,Electronics,Medium,3.53,480.5,Yes
+PROD0609,Home Decor,High,1.28,1376.97,No
+PROD0610,Pharmaceuticals,Low,1.0,582.86,Yes
+PROD0611,Furniture,Medium,47.79,344.56,No
+PROD0612,Books,Low,2.28,1890.05,Yes
+PROD0613,Pharmaceuticals,High,0.66,1295.13,No
+PROD0614,Cosmetics,Low,0.86,584.72,No
+PROD0615,Cosmetics,Low,1.97,848.2,No
+PROD0616,Clothing,High,2.69,498.41,No
+PROD0617,Home Decor,Medium,2.52,110.71,Yes
+PROD0618,Food,High,1.99,768.63,No
+PROD0619,Electronics,High,4.35,972.76,Yes
+PROD0620,Food,High,2.91,411.77,No
+PROD0621,Food,High,2.62,1564.36,Yes
+PROD0622,Clothing,Medium,2.34,1697.33,No
+PROD0623,Pharmaceuticals,Medium,1.15,1271.13,Yes
+PROD0624,Pharmaceuticals,Medium,0.24,113.43,Yes
+PROD0625,Food,High,2.77,1252.47,Yes
+PROD0626,Pharmaceuticals,Medium,1.2,988.97,Yes
+PROD0627,Books,High,0.76,294.11,No
+PROD0628,Home Decor,Medium,7.01,889.1,No
+PROD0629,Electronics,Medium,1.16,1008.61,Yes
+PROD0630,Home Decor,Low,1.11,1184.84,No
+PROD0631,Furniture,Medium,17.1,1605.24,No
+PROD0632,Cosmetics,Low,0.69,937.68,Yes
+PROD0633,Food,Low,0.13,191.27,No
+PROD0634,Electronics,Medium,2.08,985.88,Yes
+PROD0635,Home Decor,Low,6.2,618.74,No
+PROD0636,Home Decor,Low,7.1,1727.24,No
+PROD0637,Home Decor,High,7.91,127.26,No
+PROD0638,Furniture,High,26.62,254.61,No
+PROD0639,Pharmaceuticals,Low,0.4,1973.99,No
+PROD0640,Home Decor,Low,1.85,1022.83,Yes
+PROD0641,Home Decor,Medium,6.37,1419.81,Yes
+PROD0642,Furniture,Low,30.18,69.05,Yes
+PROD0643,Electronics,Low,1.77,1059.54,Yes
+PROD0644,Cosmetics,Medium,0.27,733.72,Yes
+PROD0645,Cosmetics,High,0.16,203.23,No
+PROD0646,Clothing,High,1.25,308.8,No
+PROD0647,Home Decor,Low,5.89,1394.46,No
+PROD0648,Home Decor,High,8.11,440.29,No
+PROD0649,Cosmetics,Low,0.42,253.91,Yes
+PROD0650,Furniture,High,33.64,1427.63,Yes
+PROD0651,Home Decor,High,0.8,1875.61,Yes
+PROD0652,Furniture,Low,7.34,1105.53,Yes
+PROD0653,Food,Low,2.16,1748.39,No
+PROD0654,Food,Medium,2.17,1613.37,No
+PROD0655,Electronics,High,1.83,1638.91,No
+PROD0656,Food,Medium,0.33,1794.89,Yes
+PROD0657,Pharmaceuticals,High,0.84,1643.73,Yes
+PROD0658,Clothing,Low,1.41,1304.98,No
+PROD0659,Home Decor,Medium,5.5,1476.6,Yes
+PROD0660,Food,Low,0.34,167.69,No
+PROD0661,Pharmaceuticals,High,0.41,361.11,Yes
+PROD0662,Cosmetics,High,1.76,477.47,Yes
+PROD0663,Cosmetics,Low,1.95,706.95,Yes
+PROD0664,Food,High,0.63,1589.91,No
+PROD0665,Clothing,Low,2.01,1021.48,No
+PROD0666,Pharmaceuticals,High,0.86,1452.44,No
+PROD0667,Clothing,Low,0.76,1992.85,Yes
+PROD0668,Books,High,4.88,1318.14,No
+PROD0669,Furniture,Medium,13.98,1376.45,No
+PROD0670,Food,Medium,0.31,109.77,Yes
+PROD0671,Food,Low,0.85,952.11,Yes
+PROD0672,Home Decor,High,8.75,1467.98,Yes
+PROD0673,Cosmetics,High,1.51,879.71,No
+PROD0674,Furniture,Low,20.57,773.53,Yes
+PROD0675,Food,Low,2.96,128.21,No
+PROD0676,Books,Low,4.36,1178.42,No
+PROD0677,Pharmaceuticals,High,0.69,1464.25,No
+PROD0678,Clothing,Medium,1.51,1753.18,No
+PROD0679,Food,High,2.71,872.36,No
+PROD0680,Pharmaceuticals,High,0.45,1205.08,Yes
+PROD0681,Home Decor,Low,9.17,460.79,No
+PROD0682,Cosmetics,Low,1.28,1281.54,Yes
+PROD0683,Pharmaceuticals,Medium,1.11,306.56,Yes
+PROD0684,Electronics,Medium,3.64,1822.61,Yes
+PROD0685,Clothing,High,0.62,513.21,Yes
+PROD0686,Books,High,4.86,402.91,No
+PROD0687,Electronics,Low,4.3,1009.94,Yes
+PROD0688,Electronics,High,1.39,1747.96,Yes
+PROD0689,Books,High,2.34,1053.89,Yes
+PROD0690,Electronics,High,1.92,1206.25,No
+PROD0691,Pharmaceuticals,Medium,0.29,812.61,No
+PROD0692,Food,Low,2.91,553.36,No
+PROD0693,Books,Low,3.35,684.12,Yes
+PROD0694,Food,High,2.34,305.2,Yes
+PROD0695,Electronics,High,4.86,934.89,No
+PROD0696,Furniture,High,15.62,193.32,Yes
+PROD0697,Cosmetics,Low,0.42,1063.56,No
+PROD0698,Books,Low,1.82,1666.32,Yes
+PROD0699,Furniture,Low,24.39,534.99,No
+PROD0700,Home Decor,Low,6.36,1428.22,No
+PROD0701,Food,High,0.58,376.86,No
+PROD0702,Home Decor,Low,0.85,1485.98,Yes
+PROD0703,Furniture,Medium,34.87,975.53,No
+PROD0704,Home Decor,Low,8.52,1621.06,Yes
+PROD0705,Electronics,Low,3.01,1743.13,No
+PROD0706,Electronics,High,1.19,268.24,Yes
+PROD0707,Home Decor,High,3.06,161.32,No
+PROD0708,Electronics,Medium,2.75,1876.38,No
+PROD0709,Home Decor,High,0.87,288.11,No
+PROD0710,Furniture,Low,25.35,1871.06,Yes
+PROD0711,Clothing,High,1.02,1039.11,Yes
+PROD0712,Electronics,Medium,0.4,339.27,No
+PROD0713,Electronics,High,4.94,1931.98,Yes
+PROD0714,Clothing,High,0.11,1906.03,Yes
+PROD0715,Furniture,Low,33.76,1742.44,No
+PROD0716,Clothing,High,1.42,1055.41,Yes
+PROD0717,Home Decor,Low,5.14,1350.39,No
+PROD0718,Furniture,Low,11.28,108.45,Yes
+PROD0719,Books,High,1.68,1424.13,No
+PROD0720,Clothing,Low,0.69,1363.19,No
+PROD0721,Furniture,Low,48.65,233.11,Yes
+PROD0722,Food,Medium,2.05,915.31,Yes
+PROD0723,Electronics,Low,4.37,395.44,No
+PROD0724,Pharmaceuticals,Medium,1.05,1684.32,Yes
+PROD0725,Food,High,2.84,1382.33,No
+PROD0726,Electronics,Low,2.59,1254.8,Yes
+PROD0727,Clothing,Low,2.62,1162.69,Yes
+PROD0728,Furniture,Medium,6.37,1865.35,Yes
+PROD0729,Clothing,Low,2.1,1369.2,No
+PROD0730,Food,Medium,0.73,1334.83,No
+PROD0731,Cosmetics,Medium,0.85,1319.9,Yes
+PROD0732,Electronics,Medium,0.71,1332.8,No
+PROD0733,Clothing,Medium,3.0,144.01,Yes
+PROD0734,Books,Low,4.89,843.47,Yes
+PROD0735,Food,High,2.63,1575.65,No
+PROD0736,Home Decor,High,5.89,1489.98,Yes
+PROD0737,Home Decor,Medium,8.85,838.07,No
+PROD0738,Food,High,1.05,1351.81,Yes
+PROD0739,Clothing,Low,2.44,1536.46,Yes
+PROD0740,Cosmetics,Medium,1.62,899.39,Yes
+PROD0741,Clothing,Low,2.47,284.41,No
+PROD0742,Clothing,High,1.68,61.23,No
+PROD0743,Food,Medium,1.04,764.6,Yes
+PROD0744,Furniture,Low,22.83,1406.16,Yes
+PROD0745,Electronics,Medium,2.07,924.95,Yes
+PROD0746,Pharmaceuticals,Medium,0.39,777.84,No
+PROD0747,Home Decor,High,2.66,192.73,No
+PROD0748,Cosmetics,High,1.25,1353.01,Yes
+PROD0749,Electronics,High,3.17,953.81,Yes
+PROD0750,Books,Low,2.02,1733.5,No
+PROD0751,Clothing,Medium,1.61,984.4,Yes
+PROD0752,Electronics,High,0.32,715.43,Yes
+PROD0753,Home Decor,High,4.11,827.7,No
+PROD0754,Pharmaceuticals,Low,0.89,1090.52,No
+PROD0755,Furniture,High,32.36,1541.52,Yes
+PROD0756,Furniture,Low,41.58,1450.34,No
+PROD0757,Books,High,4.79,85.55,Yes
+PROD0758,Books,High,1.14,64.75,Yes
+PROD0759,Clothing,High,1.98,1801.16,No
+PROD0760,Food,High,0.81,1857.72,Yes
+PROD0761,Books,Medium,0.49,1872.15,Yes
+PROD0762,Books,High,1.89,247.77,No
+PROD0763,Clothing,Medium,1.51,550.71,Yes
+PROD0764,Clothing,Low,0.93,649.22,No
+PROD0765,Cosmetics,Medium,1.63,1101.36,No
+PROD0766,Electronics,Medium,1.69,1240.15,No
+PROD0767,Clothing,Low,2.18,581.62,No
+PROD0768,Furniture,Low,23.61,287.68,Yes
+PROD0769,Cosmetics,Low,0.44,1378.18,Yes
+PROD0770,Cosmetics,High,0.44,1074.07,Yes
+PROD0771,Electronics,Medium,3.6,258.41,Yes
+PROD0772,Furniture,Low,30.53,550.3,Yes
+PROD0773,Clothing,High,2.89,992.91,Yes
+PROD0774,Books,High,4.07,1122.94,Yes
+PROD0775,Furniture,High,6.95,1284.65,Yes
+PROD0776,Home Decor,High,9.54,1223.14,No
+PROD0777,Clothing,High,2.48,1774.2,No
+PROD0778,Furniture,Medium,15.26,463.49,Yes
+PROD0779,Books,High,3.13,851.51,Yes
+PROD0780,Electronics,Medium,4.23,1805.05,No
+PROD0781,Electronics,Medium,1.9,511.9,Yes
+PROD0782,Electronics,High,3.95,585.87,No
+PROD0783,Clothing,Low,2.49,876.29,Yes
+PROD0784,Books,Low,3.4,236.29,Yes
+PROD0785,Clothing,High,1.91,930.95,No
+PROD0786,Food,Low,1.8,377.63,No
+PROD0787,Books,High,3.74,1732.45,No
+PROD0788,Books,Low,1.24,236.64,Yes
+PROD0789,Furniture,High,6.06,1301.84,No
+PROD0790,Books,Medium,3.11,1116.06,Yes
+PROD0791,Home Decor,Medium,2.7,812.27,No
+PROD0792,Home Decor,Low,6.15,1018.7,Yes
+PROD0793,Furniture,Low,49.45,316.06,Yes
+PROD0794,Electronics,Low,3.54,838.42,No
+PROD0795,Books,Low,2.26,1449.32,No
+PROD0796,Pharmaceuticals,Medium,1.05,1982.95,No
+PROD0797,Home Decor,Low,1.72,253.01,Yes
+PROD0798,Pharmaceuticals,Low,1.1,1177.85,No
+PROD0799,Electronics,High,1.52,204.87,No
+PROD0800,Furniture,High,8.85,1793.67,No
