@@ -24,12 +24,11 @@ co2_model = joblib.load("models/co2_model.pkl")
 # --------------------------------
 # DATABASE CONNECTION
 # --------------------------------
-
 conn = psycopg2.connect(
-    database="ecopackai",
-    user="postgres",
-    password="amulya586",
-    host="localhost",
+    database="your_db",
+    user="your_user",
+    password="your_password",
+    host="your_host",
     port="5432"
 )
 
