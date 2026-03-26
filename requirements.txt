@@ -1,0 +1,8 @@
+flask
+psycopg2
+joblib
+pandas
+reportlab
+gunicorn
+flask-cors
+openpyxl
