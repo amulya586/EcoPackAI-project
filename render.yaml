@@ -8,12 +8,12 @@ services:
     startCommand: gunicorn app:app
     envVars:
       - key: DB_NAME
-        value: your_db_name
+        value: ecopackai_db_g08k
       - key: DB_USER
-        value: your_user
+        value: ecopackai_db_g08k_user
       - key: DB_PASSWORD
-        value: your_password
+        value: sroOv5SMjlBfHoD9Dz4qNnLepw2Gqpua
       - key: DB_HOST
-        value: your-db-host.render.com
+        value: dpg-d74l1edm5p6s73f9agc0-a
       - key: DB_PORT
         value: "5432"
