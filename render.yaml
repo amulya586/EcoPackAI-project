@@ -2,6 +2,7 @@ services:
   - type: web
     name: ecopackai
     env: python
+    pythonVersion: 3.10.13
     plan: free
     buildCommand: pip install -r requirements.txt
     startCommand: gunicorn app:app
