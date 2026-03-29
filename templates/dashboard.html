@@ -37,7 +37,7 @@ margin-top:10px;
 
 <body class="container mt-4">
 
-<!-- HEADER -->
+
 <div class="header">
 <h3 class="text-success">EcoPackAI Dashboard</h3>
 
@@ -51,7 +51,7 @@ margin-top:10px;
 </div>
 </div>
 
-<!-- INPUT -->
+
 <div class="card p-4">
 
 <h5 class="mb-3">Enter Product Details</h5>
@@ -87,20 +87,20 @@ margin-top:10px;
 
 </div>
 
-<!-- ✅ FIXED BUTTON -->
+
 <button id="predictBtn" class="btn btn-success mt-4">
 Get AI Recommendation
 </button>
 
 </div>
 
-<!-- EXPORT BUTTONS -->
+
 <div class="mt-3">
 <button class="btn btn-outline-success" onclick="downloadReport()">Download Report (PDF)</button>
 <button class="btn btn-outline-primary" onclick="downloadExcel()">Download Excel</button>
 </div>
 
-<!-- TABS -->
+
 <ul class="nav nav-tabs mt-4">
 <li class="nav-item">
 <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#predictionTab">Prediction</button>
@@ -171,7 +171,7 @@ document.addEventListener("DOMContentLoaded", function () {
     checkLogin();
 });
 
-/* CHECK LOGIN */
+
 async function checkLogin() {
     let res = await fetch("/check-login", { credentials: "include" });
     let data = await res.json();
@@ -184,20 +184,19 @@ async function checkLogin() {
     }
 }
 
-/* LOGOUT */
+
 async function logout() {
     await fetch("/logout", { credentials: "include" });
     location.reload();
 }
 
-/* PREDICT */
 async function predict() {
 
     let weight = document.getElementById("weight").value;
     let fragility = document.getElementById("fragility").value;
     let productType = document.getElementById("productType").value;
 
-    // VALIDATION
+
     if (weight === "" || fragility === "" || productType === "") {
         alert("Fill all fields");
         return;
@@ -228,17 +227,17 @@ async function predict() {
             return;
         }
 
-        // CLEAR OLD DATA
+
         document.getElementById("rankingBody").innerHTML = "";
         document.getElementById("metricsBody").innerHTML = "";
 
-        // RESULT
+        
         document.getElementById("predictionResult").innerHTML =
             "Recommended Material: <b>" + data.recommended_material + "</b><br>" +
             "Cost: " + Number(data.predicted_cost).toFixed(2) + "<br>" +
             "CO₂: " + Number(data.predicted_co2).toFixed(2);
 
-        // ANALYTICS
+        
         let baselineCO2 = 200;
         let baselineCost = 500;
 
@@ -248,7 +247,7 @@ async function predict() {
         document.getElementById("co2Text").innerHTML = "CO₂ Reduction: " + co2Reduction + "%";
         document.getElementById("costText").innerHTML = "Cost Savings: ₹" + costSaving;
 
-        // INSIGHT
+        
         let insight = "";
         if (co2Reduction > 20) insight += "🌱 Eco-friendly ";
         else insight += "⚠ Higher CO₂ ";
@@ -257,7 +256,7 @@ async function predict() {
 
         document.getElementById("insightText").innerHTML = insight;
 
-        // RANKING
+        
         data.ranking.forEach(r => {
             document.getElementById("rankingBody").innerHTML += `
                 <tr>
@@ -268,7 +267,7 @@ async function predict() {
                 </tr>`;
         });
 
-        // METRICS
+
         let m = data.metrics;
 
         document.getElementById("metricsBody").innerHTML = `
@@ -286,7 +285,7 @@ async function predict() {
             </tr>
         `;
 
-        // CHART
+        
         let ctx = document.getElementById("trendChart").getContext("2d");
 
         if (chart) {
@@ -316,13 +315,12 @@ async function predict() {
     }
 }
 
-/* DOWNLOAD */
-function downloadReport() {
-    window.location = "/download-report";
+function downloadReport(){
+    window.location="/download-report"
 }
 
-function downloadExcel() {
-    window.location = "/download-excel";
+function downloadExcel(){
+    window.location="/download-excel"
 }
 
 </script>

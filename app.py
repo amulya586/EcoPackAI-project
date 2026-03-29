@@ -2,7 +2,9 @@ from flask import Flask, request, jsonify, session, render_template, redirect
 from flask_cors import CORS
 import psycopg2
 import os
-
+from flask import send_file
+import pandas as pd
+from reportlab.pdfgen import canvas
 app = Flask(__name__)
 
 
@@ -153,7 +155,6 @@ def predict():
         strength = float(data.get("strength"))
         capacity = float(data.get("capacity"))
 
-        # ✅ LOGIC
         predicted_cost = weight * 50 + strength * 10
         predicted_co2 = weight * 20 + capacity * 5
 
@@ -192,12 +193,30 @@ def predict():
 
 @app.route("/download-report")
 def download_report():
-    return "PDF feature coming soon"
+    file_path = "report.pdf"
+
+    c = canvas.Canvas(file_path)
+    c.drawString(100, 750, "EcoPackAI Report")
+    c.drawString(100, 720, "Generated Successfully")
+    c.save()
+
+    return send_file(file_path, as_attachment=True)
+
 
 
 @app.route("/download-excel")
 def download_excel():
-    return "Excel feature coming soon"
+    data = {
+        "Material": ["Paper", "Plastic", "Glass"],
+        "Cost": [120, 200, 300],
+        "CO2": [50, 150, 80]
+    }
+
+    df = pd.DataFrame(data)
+    file_path = "report.xlsx"
+    df.to_excel(file_path, index=False)
+
+    return send_file(file_path, as_attachment=True)
 
 
 
