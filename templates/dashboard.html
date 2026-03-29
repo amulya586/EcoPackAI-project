@@ -10,7 +10,6 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 <style>
-
 body{
 background:#f4f7f9;
 }
@@ -32,17 +31,13 @@ padding:20px;
 border-radius:8px;
 margin-top:10px;
 }
-
 </style>
 
 </head>
 
 <body class="container mt-4">
 
-<!-- HEADER -->
-
 <div class="header">
-
 <h3 class="text-success">EcoPackAI Dashboard</h3>
 
 <div>
@@ -51,13 +46,9 @@ margin-top:10px;
 <a id="loginBtn" href="/login" class="btn btn-primary btn-sm">Login</a>
 <a id="registerBtn" href="/register" class="btn btn-secondary btn-sm">Register</a>
 
-<button id="logoutBtn" onclick="logout()" class="btn btn-danger btn-sm" style="display:none;">Logout</button>
+<button id="logoutBtn" class="btn btn-danger btn-sm" style="display:none;">Logout</button>
 </div>
-
 </div>
-
-
-<!-- INPUT -->
 
 <div class="card p-4">
 
@@ -94,12 +85,12 @@ margin-top:10px;
 
 </div>
 
-<button class="btn btn-success mt-4" onclick="predict()">Get AI Recommendation</button>
+<button id="predictBtn" class="btn btn-success mt-4">
+Get AI Recommendation
+</button>
 
 </div>
 
-
-<!-- EXPORT BUTTONS -->
 
 <div class="mt-3">
 <button class="btn btn-outline-success" onclick="downloadReport()">Download Report (PDF)</button>
@@ -107,63 +98,38 @@ margin-top:10px;
 </div>
 
 
-<!-- TABS -->
-
 <ul class="nav nav-tabs mt-4">
-
 <li class="nav-item">
 <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#predictionTab">Prediction</button>
 </li>
-
 <li class="nav-item">
 <button class="nav-link" data-bs-toggle="tab" data-bs-target="#analyticsTab">Analytics</button>
 </li>
-
 <li class="nav-item">
 <button class="nav-link" data-bs-toggle="tab" data-bs-target="#rankingTab">Ranking</button>
 </li>
-
 <li class="nav-item">
 <button class="nav-link" data-bs-toggle="tab" data-bs-target="#metricsTab">Metrics</button>
 </li>
-
 </ul>
-
 
 <div class="tab-content">
 
-<!-- PREDICTION -->
-
 <div class="tab-pane fade show active" id="predictionTab">
-
 <h5>AI Recommendation</h5>
-
 <p id="predictionResult" class="text-success fw-bold"></p>
 <p id="insightText" class="fw-bold text-success"></p>
-
 </div>
-
-
-<!-- ANALYTICS -->
 
 <div class="tab-pane fade" id="analyticsTab">
-
 <h5>Business Intelligence</h5>
-
 <p id="co2Text"></p>
 <p id="costText"></p>
-
 <canvas id="trendChart"></canvas>
-
 </div>
 
-
-<!-- RANKING -->
-
 <div class="tab-pane fade" id="rankingTab">
-
 <table class="table table-bordered mt-3">
-
 <thead>
 <tr>
 <th>Material</th>
@@ -172,20 +138,12 @@ margin-top:10px;
 <th>Rank</th>
 </tr>
 </thead>
-
 <tbody id="rankingBody"></tbody>
-
 </table>
-
 </div>
 
-
-<!-- METRICS -->
-
 <div class="tab-pane fade" id="metricsTab">
-
 <table class="table table-bordered mt-3">
-
 <thead>
 <tr>
 <th>Model</th>
@@ -194,38 +152,47 @@ margin-top:10px;
 <th>R²</th>
 </tr>
 </thead>
-
 <tbody id="metricsBody"></tbody>
-
 </table>
-
 </div>
 
 </div>
-
 
 <script>
 
-let chart = null
+let chart = null;
 
-window.onload = async function(){
+document.addEventListener("DOMContentLoaded", function(){
 
-let res = await fetch("/check-login")
+console.log("JS LOADED")
+
+document.getElementById("predictBtn").addEventListener("click", predict)
+document.getElementById("logoutBtn").addEventListener("click", logout)
+
+checkLogin()
+
+})
+
+async function checkLogin(){
+let res = await fetch("/check-login",{credentials:"include"})
 let data = await res.json()
 
 if(data.logged_in){
-document.getElementById("accountName").innerHTML="Welcome "+data.name
+document.getElementById("accountName").innerText = data.name
 document.getElementById("loginBtn").style.display="none"
 document.getElementById("registerBtn").style.display="none"
 document.getElementById("logoutBtn").style.display="inline-block"
 }
-
 }
 
-
-/* MAIN PREDICT */
+async function logout(){
+await fetch("/logout",{credentials:"include"})
+location.reload()
+}
 
 async function predict(){
+
+console.log("BUTTON CLICKED")
 
 let weight = document.getElementById("weight").value
 let fragility = document.getElementById("fragility").value
@@ -236,56 +203,60 @@ alert("Fill all fields")
 return
 }
 
+try{
+
 let response = await fetch("/predict",{
 method:"POST",
+credentials:"include",
 headers:{"Content-Type":"application/json"},
 body:JSON.stringify({
-weight,
-strength:fragility*2,
-capacity:weight*3,
-biodegradability:8,
-recyclability:7,
-durability:fragility*3
+weight: parseFloat(weight),
+strength: parseInt(fragility)*2,
+capacity: parseFloat(weight)*3,
+biodegradability: 8,
+recyclability: 7,
+durability: parseInt(fragility)*3
 })
 })
+
+console.log("STATUS:", response.status)
 
 let data = await response.json()
 
-/* SHOW RESULT */
+console.log("DATA:", data)
+
+if(!response.ok){
+alert("Server error")
+return
+}
+
+if(data.error){
+alert(data.error)
+return
+}
+
 
 document.getElementById("predictionResult").innerHTML =
-"Recommended Material: <b>"+data.recommended_material+"</b><br>"+
-"Cost: "+data.predicted_cost.toFixed(2)+"<br>"+
-"CO₂: "+data.predicted_co2.toFixed(2)
+`Recommended Material: <b>${data.recommended_material}</b><br>
+Cost: ${data.predicted_cost?.toFixed(2) || "N/A"}<br>
+CO₂: ${data.predicted_co2?.toFixed(2) || "N/A"}`
 
-/* ANALYTICS (REALISTIC) */
 
-let baselineCO2 = 200
-let baselineCost = 500
+let co2Reduction = ((200 - data.predicted_co2)/200*100).toFixed(2)
+let costSaving = (500 - data.predicted_cost).toFixed(2)
 
-let co2Reduction = ((baselineCO2 - data.predicted_co2)/baselineCO2*100).toFixed(2)
-let costSaving = (baselineCost - data.predicted_cost).toFixed(2)
+document.getElementById("co2Text").innerText = "CO₂ Reduction: " + co2Reduction + "%"
+document.getElementById("costText").innerText = "Cost Savings: ₹" + costSaving
 
-document.getElementById("co2Text").innerHTML =
-"CO₂ Reduction: "+co2Reduction+"%"
-
-document.getElementById("costText").innerHTML =
-"Cost Savings: ₹"+costSaving
-
-/* INSIGHTS */
 
 let insight = ""
-
-if(co2Reduction > 20) insight += "🌱 Eco-friendly "
+if(co2Reduction > 20) insight += "Eco-friendly "
 else insight += "⚠ Higher CO₂ "
+if(costSaving > 100) insight += "Saves cost "
+if(parseInt(fragility) === 3) insight += "Fragile safe"
 
-if(costSaving > 100) insight += "💰 Saves cost "
+document.getElementById("insightText").innerText = insight
 
-if(fragility == 3) insight += "📦 Fragile safe"
-
-document.getElementById("insightText").innerHTML = insight
-
-/* RANKING */
 
 let body = document.getElementById("rankingBody")
 body.innerHTML=""
@@ -300,52 +271,64 @@ body.innerHTML += `
 </tr>`
 })
 
-/* METRICS */
-
-let m = data.metrics
 
 document.getElementById("metricsBody").innerHTML = `
-<tr><td>Cost</td><td>${m.cost_model.rmse}</td><td>${m.cost_model.mae}</td><td>${m.cost_model.r2}</td></tr>
-<tr><td>CO2</td><td>${m.co2_model.rmse}</td><td>${m.co2_model.mae}</td><td>${m.co2_model.r2}</td></tr>
+<tr><td>Cost</td><td>${data.metrics.cost_model.rmse}</td><td>${data.metrics.cost_model.mae}</td><td>${data.metrics.cost_model.r2}</td></tr>
+<tr><td>CO2</td><td>${data.metrics.co2_model.rmse}</td><td>${data.metrics.co2_model.mae}</td><td>${data.metrics.co2_model.r2}</td></tr>
 `
 
-/* CHART */
 
 if(chart) chart.destroy()
+
+let topMaterials = data.ranking.slice(0, 5)
 
 chart = new Chart(document.getElementById("trendChart"),{
 type:"bar",
 data:{
-labels:data.ranking.map(r=>r.material),
-datasets:[{
+labels: topMaterials.map(r => r.material),
+datasets:[
+{
 label:"CO₂",
-data:data.ranking.map(r=>r.co2)
-},{
+data: topMaterials.map(r => r.co2)
+},
+{
 label:"Cost",
-data:data.ranking.map(r=>r.cost)
-}]
+data: topMaterials.map(r => r.cost)
+}
+]
+},
+options:{
+responsive:true,
+plugins:{
+legend:{
+position:'top'
+},
+title:{
+display:true,
+text:"Top 5 Materials Comparison"
+}
+},
+scales:{
+y:{
+beginAtZero:true
+}
+}
 }
 })
 
+}catch(err){
+console.error("ERROR:", err)
+alert("Frontend error")
 }
 
-
-/* EXPORT */
+}
 
 function downloadReport(){
-window.open("/download-report")
+window.location="/download-report"
 }
 
 function downloadExcel(){
-window.open("/download-excel")
-}
-
-
-/* LOGOUT */
-
-async function logout(){
-await fetch("/logout")
-location.href="/"
+window.location="/download-excel"
 }
 
 </script>

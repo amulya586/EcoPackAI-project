@@ -5,6 +5,8 @@
 <meta charset="UTF-8">
 <title>EcoPackAI</title>
 
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
 <style>
 
 body{
@@ -200,11 +202,53 @@ support sustainable supply chains.
 </section>
 
 
+<section style="padding:60px; text-align:center;">
+
+<h2 style="color:#2e7d32;">Sustainability Insights</h2>
+
+<div id="chart" style="width:80%; margin:auto;"></div>
+
+</section>
+
+
 <footer>
 
 <p>© 2026 EcoPackAI | Sustainable Packaging Intelligence</p>
 
 </footer>
+
+
+
+<script>
+
+var materials = ["Cardboard", "Bioplastic", "Glass"];
+var cost = [120, 140, 180];
+var co2 = [80, 60, 150];
+
+var trace1 = {
+    x: materials,
+    y: cost,
+    name: 'Cost',
+    type: 'bar'
+};
+
+var trace2 = {
+    x: materials,
+    y: co2,
+    name: 'CO2 Emission',
+    type: 'bar'
+};
+
+var data = [trace1, trace2];
+
+var layout = {
+    title: "Material Comparison",
+    barmode: 'group'
+};
+
+Plotly.newPlot('chart', data, layout);
+
+</script>
 
 </body>
 </html>
