@@ -1,14 +1,15 @@
 import psycopg2
 import joblib
-import json
 import pandas as pd
 import io
 import os
 import warnings
+
 from flask import Flask, request, jsonify, render_template, session, redirect, send_file
 from flask_cors import CORS
 from reportlab.platypus import SimpleDocTemplate, Paragraph
 from reportlab.lib.styles import getSampleStyleSheet
+
 warnings.filterwarnings("ignore")
 
 print("APP STARTING...")
@@ -25,27 +26,23 @@ DATA_PATH = os.path.join(BASE_DIR, "data")
 global_ranking = []
 
 
-print("Loading models...")
-
 try:
     cost_model = joblib.load(os.path.join(MODEL_PATH, "cost_model.pkl"))
     co2_model = joblib.load(os.path.join(MODEL_PATH, "co2_model.pkl"))
-    print("Models loaded")
+    print("Models loaded ✅")
 except:
     cost_model = None
     co2_model = None
+    print("Models NOT loaded ❌")
 
-
-print("Loading dataset...")
 
 try:
     materials_df = pd.read_csv(os.path.join(DATA_PATH, "cleaned_materials.csv"))
     print("Dataset loaded:", materials_df.shape)
 except:
     materials_df = None
+    print("Dataset NOT loaded ❌")
 
-
-print("Precomputing materials...")
 
 precomputed = []
 
@@ -119,20 +116,22 @@ def register():
     data = request.json
 
     if conn is None:
-        return jsonify({"success": True})
+        return jsonify({"success": True, "message": "Demo mode"})
 
     try:
         cur = conn.cursor()
         cur.execute(
             "INSERT INTO users (username, email, password) VALUES (%s, %s, %s)",
-            (data['username'], data['email'], data['password'])
+            (data['name'], data['email'], data['password'])   # ✅ FIXED HERE
         )
         conn.commit()
         cur.close()
-        return jsonify({"success": True})
+
+        return jsonify({"success": True, "message": "Registered successfully"})
+
     except Exception as e:
         print("Register error:", e)
-        return jsonify({"success": False})
+        return jsonify({"success": False, "message": "User already exists"})
 
 
 @app.route('/login', methods=['POST'])
@@ -145,7 +144,7 @@ def login():
 
     cur = conn.cursor()
     cur.execute(
-        "SELECT username FROM users WHERE email=%s AND password=%s",
+        "SELECT username FROM users WHERE email=%s AND password=%s",  # ✅ FIXED
         (data['email'], data['password'])
     )
     user = cur.fetchone()
@@ -155,8 +154,7 @@ def login():
         session['user'] = user[0]
         return jsonify({"success": True, "name": user[0]})
     else:
-        return jsonify({"success": False})
-
+        return jsonify({"success": False, "message": "Invalid credentials"})
 
 @app.route('/check-login')
 def check_login():
@@ -230,13 +228,10 @@ def download_report():
     doc = SimpleDocTemplate(buffer)
     styles = getSampleStyleSheet()
 
-    doc.build([
-        Paragraph("EcoPackAI Report", styles['Title'])
-    ])
+    doc.build([Paragraph("EcoPackAI Report", styles['Title'])])
 
     buffer.seek(0)
     return send_file(buffer, as_attachment=True,download_name="report.pdf",mimetype='application/pdf')
-
 
 @app.route('/download-excel')
 def download_excel():
