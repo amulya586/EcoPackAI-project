@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
@@ -13,18 +14,15 @@
 body{
 background:#f4f7f9;
 }
-
 .header{
 display:flex;
 justify-content:space-between;
 align-items:center;
 margin-bottom:20px;
 }
-
 .card{
 box-shadow:0 2px 10px rgba(0,0,0,0.1);
 }
-
 .tab-content{
 background:white;
 padding:20px;
@@ -43,10 +41,10 @@ margin-top:10px;
 <div>
 <span id="accountName" class="me-3 fw-bold text-success"></span>
 
-<a id="loginBtn" href="/login" class="btn btn-primary btn-sm">Login</a>
-<a id="registerBtn" href="/register" class="btn btn-secondary btn-sm">Register</a>
+<a id="loginBtn" href="/login" class="btn btn-primary btn-sm">Login</a> <a id="registerBtn" href="/register" class="btn btn-secondary btn-sm">Register</a>
 
 <button id="logoutBtn" class="btn btn-danger btn-sm" style="display:none;">Logout</button>
+
 </div>
 </div>
 
@@ -91,12 +89,10 @@ Get AI Recommendation
 
 </div>
 
-
 <div class="mt-3">
 <button class="btn btn-outline-success" onclick="downloadReport()">Download Report (PDF)</button>
 <button class="btn btn-outline-primary" onclick="downloadExcel()">Download Excel</button>
 </div>
-
 
 <ul class="nav nav-tabs mt-4">
 <li class="nav-item">
@@ -115,11 +111,15 @@ Get AI Recommendation
 
 <div class="tab-content">
 
+<!-- Prediction -->
+
 <div class="tab-pane fade show active" id="predictionTab">
 <h5>AI Recommendation</h5>
 <p id="predictionResult" class="text-success fw-bold"></p>
 <p id="insightText" class="fw-bold text-success"></p>
 </div>
+
+<!-- Analytics -->
 
 <div class="tab-pane fade" id="analyticsTab">
 <h5>Business Intelligence</h5>
@@ -127,6 +127,8 @@ Get AI Recommendation
 <p id="costText"></p>
 <canvas id="trendChart"></canvas>
 </div>
+
+<!-- Ranking -->
 
 <div class="tab-pane fade" id="rankingTab">
 <table class="table table-bordered mt-3">
@@ -141,6 +143,8 @@ Get AI Recommendation
 <tbody id="rankingBody"></tbody>
 </table>
 </div>
+
+<!-- Metrics -->
 
 <div class="tab-pane fade" id="metricsTab">
 <table class="table table-bordered mt-3">
@@ -163,14 +167,9 @@ Get AI Recommendation
 let chart = null;
 
 document.addEventListener("DOMContentLoaded", function(){
-
-console.log("JS LOADED")
-
 document.getElementById("predictBtn").addEventListener("click", predict)
 document.getElementById("logoutBtn").addEventListener("click", logout)
-
 checkLogin()
-
 })
 
 async function checkLogin(){
@@ -192,8 +191,6 @@ location.reload()
 
 async function predict(){
 
-console.log("BUTTON CLICKED")
-
 let weight = document.getElementById("weight").value
 let fragility = document.getElementById("fragility").value
 let productType = document.getElementById("productType").value
@@ -212,52 +209,35 @@ headers:{"Content-Type":"application/json"},
 body:JSON.stringify({
 weight: parseFloat(weight),
 strength: parseInt(fragility)*2,
-capacity: parseFloat(weight)*3,
-biodegradability: 8,
-recyclability: 7,
-durability: parseInt(fragility)*3
+capacity: parseFloat(weight)*3
 })
 })
-
-console.log("STATUS:", response.status)
 
 let data = await response.json()
 
-console.log("DATA:", data)
-
-if(!response.ok){
-alert("Server error")
+if(!response.ok || data.error){
+alert(data.error || "Server error")
 return
 }
 
-if(data.error){
-alert(data.error)
-return
-}
-
-
+// Prediction
 document.getElementById("predictionResult").innerHTML =
 `Recommended Material: <b>${data.recommended_material}</b><br>
-Cost: ${data.predicted_cost?.toFixed(2) || "N/A"}<br>
-CO₂: ${data.predicted_co2?.toFixed(2) || "N/A"}`
+Cost: ${data.predicted_cost.toFixed(2)}<br>
+CO₂: ${data.predicted_co2.toFixed(2)}`
 
-
+// Insights
 let co2Reduction = ((200 - data.predicted_co2)/200*100).toFixed(2)
 let costSaving = (500 - data.predicted_cost).toFixed(2)
 
 document.getElementById("co2Text").innerText = "CO₂ Reduction: " + co2Reduction + "%"
 document.getElementById("costText").innerText = "Cost Savings: ₹" + costSaving
 
+document.getElementById("insightText").innerText =
+(co2Reduction > 20 ? "Eco-friendly " : "⚠ Higher CO₂ ") +
+(costSaving > 100 ? "Cost Saving " : "")
 
-let insight = ""
-if(co2Reduction > 20) insight += "Eco-friendly "
-else insight += "⚠ Higher CO₂ "
-if(costSaving > 100) insight += "Saves cost "
-if(parseInt(fragility) === 3) insight += "Fragile safe"
-
-document.getElementById("insightText").innerText = insight
-
-
+// Ranking
 let body = document.getElementById("rankingBody")
 body.innerHTML=""
 
@@ -271,54 +251,37 @@ body.innerHTML += `
 </tr>`
 })
 
-
+// Metrics
+if(data.metrics){
 document.getElementById("metricsBody").innerHTML = `
 <tr><td>Cost</td><td>${data.metrics.cost_model.rmse}</td><td>${data.metrics.cost_model.mae}</td><td>${data.metrics.cost_model.r2}</td></tr>
 <tr><td>CO2</td><td>${data.metrics.co2_model.rmse}</td><td>${data.metrics.co2_model.mae}</td><td>${data.metrics.co2_model.r2}</td></tr>
 `
+}
 
-
+// Chart
 if(chart) chart.destroy()
-
-let topMaterials = data.ranking.slice(0, 5)
 
 chart = new Chart(document.getElementById("trendChart"),{
 type:"bar",
 data:{
-labels: topMaterials.map(r => r.material),
+labels: data.ranking.map(r => r.material),
 datasets:[
 {
 label:"CO₂",
-data: topMaterials.map(r => r.co2)
+data: data.ranking.map(r => r.co2)
 },
 {
 label:"Cost",
-data: topMaterials.map(r => r.cost)
+data: data.ranking.map(r => r.cost)
 }
 ]
-},
-options:{
-responsive:true,
-plugins:{
-legend:{
-position:'top'
-},
-title:{
-display:true,
-text:"Top 5 Materials Comparison"
-}
-},
-scales:{
-y:{
-beginAtZero:true
-}
-}
 }
 })
 
 }catch(err){
-console.error("ERROR:", err)
-alert("Frontend error")
+console.error(err)
+alert("Something went wrong. Check console (F12)")
 }
 
 }
