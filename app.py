@@ -4,20 +4,26 @@ import psycopg2
 import os
 
 app = Flask(__name__)
-app.secret_key = "supersecretkey"
+
+
+app.secret_key = os.getenv("SECRET_KEY", "supersecretkey")
 
 
 app.config["SESSION_COOKIE_SAMESITE"] = "None"
 app.config["SESSION_COOKIE_SECURE"] = True
 
-CORS(app, supports_credentials=True)
 
+CORS(app, supports_credentials=True)
 
 
 DATABASE_URL = os.getenv("DATABASE_URL")
 
 def get_db_connection():
-    return psycopg2.connect(DATABASE_URL)
+    try:
+        return psycopg2.connect(DATABASE_URL)
+    except Exception as e:
+        print("DB ERROR:", e)
+        return None
 
 
 
@@ -25,13 +31,16 @@ def get_db_connection():
 def home():
     return render_template("index.html")
 
+
 @app.route("/login")
 def login_page():
     return render_template("login.html")
 
+
 @app.route("/register")
 def register_page():
     return render_template("register.html")
+
 
 @app.route("/dashboard")
 def dashboard():
@@ -49,8 +58,11 @@ def register():
     email = data.get("email")
     password = data.get("password")
 
+    conn = get_db_connection()
+    if not conn:
+        return jsonify({"success": False, "message": "Database connection failed"})
+
     try:
-        conn = get_db_connection()
         cursor = conn.cursor()
 
         cursor.execute(
@@ -67,11 +79,13 @@ def register():
             "message": "Registered successfully"
         })
 
-    except Exception:
+    except Exception as e:
+        print("REGISTER ERROR:", e)
         return jsonify({
             "success": False,
             "message": "Email already exists"
         })
+
 
 @app.route("/login", methods=["POST"])
 def login():
@@ -81,6 +95,9 @@ def login():
     password = data.get("password")
 
     conn = get_db_connection()
+    if not conn:
+        return jsonify({"success": False, "message": "Database error"})
+
     cursor = conn.cursor()
 
     cursor.execute(
@@ -97,17 +114,22 @@ def login():
         session["user"] = email
         session["name"] = user[0]
 
-        return jsonify({"success": True})
+        return jsonify({
+            "success": True,
+            "name": user[0]
+        })
 
     return jsonify({
         "success": False,
         "message": "Invalid email or password"
     })
 
+
 @app.route("/logout")
 def logout():
     session.clear()
     return redirect("/login")
+
 
 @app.route("/check-login")
 def check_login():
@@ -121,6 +143,7 @@ def check_login():
 
 
 
+
 @app.route("/predict", methods=["POST"])
 def predict():
     try:
@@ -130,7 +153,7 @@ def predict():
         strength = float(data.get("strength"))
         capacity = float(data.get("capacity"))
 
-        # Dummy logic
+        # ✅ LOGIC
         predicted_cost = weight * 50 + strength * 10
         predicted_co2 = weight * 20 + capacity * 5
 
@@ -160,14 +183,17 @@ def predict():
             "metrics": metrics
         })
 
-    except Exception:
+    except Exception as e:
+        print("PREDICT ERROR:", e)
         return jsonify({"error": "Prediction failed"})
+
 
 
 
 @app.route("/download-report")
 def download_report():
     return "PDF feature coming soon"
+
 
 @app.route("/download-excel")
 def download_excel():
