@@ -5,12 +5,10 @@ import pandas as pd
 import io
 import os
 import warnings
-
 from flask import Flask, request, jsonify, render_template, session, redirect, send_file
 from flask_cors import CORS
 from reportlab.platypus import SimpleDocTemplate, Paragraph
 from reportlab.lib.styles import getSampleStyleSheet
-
 warnings.filterwarnings("ignore")
 
 print("APP STARTING...")
@@ -37,6 +35,7 @@ except:
     cost_model = None
     co2_model = None
 
+
 print("Loading dataset...")
 
 try:
@@ -51,7 +50,7 @@ print("Precomputing materials...")
 precomputed = []
 
 if materials_df is not None:
-    for _, row in materials_df.head(30).iterrows():  # only 30 materials
+    for _, row in materials_df.head(30).iterrows():
         precomputed.append({
             "material": row.get("material_type", "Unknown"),
             "bio": row.get("biodegradability_score", 5),
@@ -67,14 +66,33 @@ try:
 
     if DATABASE_URL:
         conn = psycopg2.connect(DATABASE_URL, sslmode="require")
-        print("Database connected")
+        print("Database connected ✅")
     else:
         conn = None
-        print("No DATABASE_URL found")
+        print("No DATABASE_URL found ❌")
 
 except Exception as e:
     print("DB Connection Error:", e)
     conn = None
+
+
+if conn:
+    try:
+        cur = conn.cursor()
+        cur.execute("""
+            CREATE TABLE IF NOT EXISTS users (
+                id SERIAL PRIMARY KEY,
+                username VARCHAR(100),
+                email VARCHAR(100) UNIQUE,
+                password VARCHAR(200)
+            );
+        """)
+        conn.commit()
+        cur.close()
+        print("Users table ready ✅")
+    except Exception as e:
+        print("Table creation error:", e)
+
 
 
 @app.route('/')
@@ -96,6 +114,27 @@ def dashboard():
     return render_template("dashboard.html")
 
 
+@app.route('/register', methods=['POST'])
+def register():
+    data = request.json
+
+    if conn is None:
+        return jsonify({"success": True})
+
+    try:
+        cur = conn.cursor()
+        cur.execute(
+            "INSERT INTO users (username, email, password) VALUES (%s, %s, %s)",
+            (data['username'], data['email'], data['password'])
+        )
+        conn.commit()
+        cur.close()
+        return jsonify({"success": True})
+    except Exception as e:
+        print("Register error:", e)
+        return jsonify({"success": False})
+
+
 @app.route('/login', methods=['POST'])
 def login():
     data = request.json
@@ -106,7 +145,7 @@ def login():
 
     cur = conn.cursor()
     cur.execute(
-        "SELECT name FROM users WHERE email=%s AND password=%s",
+        "SELECT username FROM users WHERE email=%s AND password=%s",
         (data['email'], data['password'])
     )
     user = cur.fetchone()
@@ -117,6 +156,7 @@ def login():
         return jsonify({"success": True, "name": user[0]})
     else:
         return jsonify({"success": False})
+
 
 @app.route('/check-login')
 def check_login():
@@ -169,7 +209,7 @@ def predict():
             "score": score
         })
 
-    ranking = sorted(ranking, key=lambda x: x["score"])[:5]  # only top 5
+    ranking = sorted(ranking, key=lambda x: x["score"])[:5]
 
     for i, r in enumerate(ranking):
         r["rank"] = i + 1
@@ -180,11 +220,7 @@ def predict():
         "recommended_material": ranking[0]["material"],
         "predicted_cost": ranking[0]["cost"],
         "predicted_co2": ranking[0]["co2"],
-        "ranking": ranking,
-        "metrics": {
-            "cost_model": {"rmse": 12.5, "mae": 8.2, "r2": 0.89},
-            "co2_model": {"rmse": 15.2, "mae": 10.1, "r2": 0.87}
-        }
+        "ranking": ranking
     })
 
 
@@ -200,6 +236,7 @@ def download_report():
 
     buffer.seek(0)
     return send_file(buffer, as_attachment=True,download_name="report.pdf",mimetype='application/pdf')
+
 
 @app.route('/download-excel')
 def download_excel():
