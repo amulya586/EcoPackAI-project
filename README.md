@@ -1,7 +1,6 @@
 EcoPackAI – Intelligent Sustainable Packaging Recommendation System
 
 EcoPackAI is a machine learning powered web application that helps users select the most efficient and eco-friendly packaging materials. The system evaluates materials based on cost, carbon emissions, recyclability, and other sustainability factors to generate optimized recommendations.
-
 The application integrates trained ML models with a Flask backend and interactive frontend to provide real-time insights and analytics for sustainable decision making.
 
 Key Capabilities
